@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ album.album_name }} Review
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-4">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="album-details text-center">
+                    <h2>{{ album.album_name }}</h2>
+                    <p>By {{ album.artist_name }}</p>
+                    <img src="{{ album.album_cover_url }}" alt="{{ album.album_name }} album cover" class="img-fluid mb-4">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                {% if album.review %}
+                    <div class="existing-review">
+                        <h5>Your Review</h5>
+                        <p>{{ album.review }}</p>
+                        <i class="icon-{{album.rating}}"></i>
+                    </div>
+                    <hr>
+                {% endif %}
+
+                <div class="review-form">
+                    <form action="{{ url_for('submit_review', album_id=album.id) }}" method="POST">
+                        <div class="mb-3">
+                            <label for="review" class="form-label">Review?</label>
+                            <textarea id="review" name="review" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Your Rating</label>
+                            <select id="rating" name="rating" class="form-select" required>
+                                <option value="terrible">Terrible</option>
+                                <option value="bad">Bad</option>
+                                <option value="mediocre">Mediocre</option>
+                                <option value="okay">Okay</option>
+                                <option value="good">Good</option>
+                                <option value="amazing">Amazing</option>
+                            </select>
+                        </div>
+                        <div class="input-submit">
+                            <button type="submit" class="submit-btn">
+                            <label for="submit">Save</label>
+                        </div>
+                    </form>
+                    <form action="{{ url_for('remove', album_id=album.id) }}" method="POST">
+                        <div class="input-submit mt-2">
+                            <button type="submit" class="submit-btn">
+                            <label for="submit">Remove Album</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

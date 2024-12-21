@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Library
+{% endblock %}
+
+{% block main %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="container mt-4">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <h2 class="login-header">Library</h2>
+    <div class="container">
+        <div id="grid">
+            {% for album in albums %}
+            <div class="grid-item">
+                <div class="album-cover">
+                    <a href="{{ url_for('review', album_id=album.id) }}">
+                        <img src="{{ album.album_cover_url }}" alt="{{ album.album_name }} album cover">
+                    </a>
+                    <div class="rating-icon position-absolute">
+                        {% if album.rating == 'terrible' %}
+                            <i class="icon-terrible"></i>
+                        {% elif album.rating == 'bad' %}
+                            <i class="icon-bad"></i>
+                        {% elif album.rating == 'mediocre' %}
+                            <i class="icon-mediocre"></i>
+                        {% elif album.rating == 'okay' %}
+                            <i class="icon-okay"></i>
+                        {% elif album.rating == 'good' %}
+                            <i class="icon-good"></i>
+                        {% elif album.rating == 'amazing' %}
+                            <i class="icon-amazing"></i>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

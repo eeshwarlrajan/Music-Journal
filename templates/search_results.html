@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+    <h2 class="text-center mb-4">Search Results</h2>
+
+    <div class="container">
+        <div class="row">
+            {% for album in albums %}
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="{{ album.image[3]['#text'] }}" class="card-img-top" alt="{{ album.name }} album art">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ album.name }}</h5>
+                            <p class="card-text">Artist: {{ album.artist }}</p>
+
+                            <form action="/add" method="POST">
+                                <input type="hidden" name="album_name" value="{{ album.name }}">
+                                <input type="hidden" name="artist_name" value="{{ album.artist }}">
+                                <input type="hidden" name="album_image" value="{{ album.image[2]['#text'] }}">
+                                <button type="submit" class="add-btn">Add to Library</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

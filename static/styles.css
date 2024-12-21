@@ -1,0 +1,356 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Tera', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #dfdfdf !important;
+    padding-top: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.login-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 440px;
+    height: 480px;
+    padding: 30px;
+}
+.login-header{
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+.login-header {
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+.input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-field{
+    flex: 1;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.05);
+    outline: none;
+    transition: .3s;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.search-btn {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+    align-items: center;
+    transform: translateY(-7px);
+}
+
+
+::placeholder{
+    font-weight: 500;
+    color: #222;
+}
+.input-field:focus{
+    transform: scaleX(105%);
+    box-shadow: 0px 0px 0px 4px #333;
+}
+.input-field:hover{
+    transform: scaleX(102.5%);
+}
+.input-field:focus:hover {
+    transform: scaleX(105%); /* When focused, it keeps the focus scaling */
+}
+
+
+a:hover{
+    text-decoration: underline;
+}
+
+.card {
+    transition: .3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.input-submit{
+    position: relative;
+}
+.submit-btn{
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.add-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.add-btn:hover {
+ transform: scale(1.05, 1);
+ text-decoration: none;
+}
+
+.input-submit label{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.submit-btn:hover{
+    background: #000;
+    transform: scale(1.05, 1)
+}
+
+.sign-up-link{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.sign-up-link a{
+    color: #000;
+    font-weight: 600;
+}
+
+.text-center{
+    padding-top: 20px;
+}
+li, a, button {
+    font-family: "Lexend Tera", sans-serif;
+    font-size: 16px
+    text-decoration: none;
+}
+
+.search-btn img{
+    width: 20px;
+    height: 20px;
+}
+
+.search-btn:hover {
+    background: #000;
+    transform: scale(1.05);
+}
+
+.navheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+    height: 60px;
+}
+
+.logo {
+
+    height: auto;
+    vertical-align: middle;
+    color: white;
+    padding-top: 15px;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.nav__links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #415fb0;
+}
+
+button {
+    padding: 9px 25px;
+    border: none;
+    border_radiues: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0);
+}
+
+
+.navheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    position: fixed; /
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.album-cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    width: 200px;
+    height: 200px;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.album-cover:hover {
+    transform: scale(1.1);
+}
+
+.album-cover:hover img{
+    transform: none;
+}
+.rating-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Example styles for icons - customize as needed */
+.icon-terrible::before {
+    content: "💀";
+}
+
+.icon-bad::before {
+    content: "😟";
+}
+
+.icon-mediocre::before {
+    content: "😐";
+}
+
+.icon-okay::before {
+    content: "🙂";
+}
+
+.icon-good::before {
+    content: "😌";
+}
+
+.icon-amazing::before {
+    content: "😍";
+}
+
+.container {
+    padding-top: 30px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-lg-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+
+.flash-message button{
+    border-radius: 8px;
+}
+
+.flash-message button:hover{
+    background-color: white;
+}
+
+#grid {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.album-details img{
+    border-radius: 15px;
+}
